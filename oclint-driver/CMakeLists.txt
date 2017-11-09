@@ -22,8 +22,8 @@ IF((NOT NO_ANALYTICS) AND (NOT MINGW) AND (NOT DOC_GEN_BUILD) AND (NOT TEST_BUIL
     LINK_DIRECTORIES(${COUNTLY_BUILD_DIR}/lib)
     IF(APPLE)
         # use OpenSSL from Homebrew installation due to Apple deprecated its support
-        INCLUDE_DIRECTORIES(/usr/local/opt/openssl/include)
-        LINK_DIRECTORIES(/usr/local/opt/openssl/lib)
+        INCLUDE_DIRECTORIES(/opt/local/include)
+        LINK_DIRECTORIES(/opt/local/lib)
     ENDIF()
 ENDIF()
 
@@ -63,8 +63,8 @@ IF((NOT NO_ANALYTICS) AND (NOT MINGW) AND (NOT DOC_GEN_BUILD) AND (NOT TEST_BUIL
     IF(APPLE)
         TARGET_LINK_LIBRARIES(oclint-${OCLINT_VERSION_RELEASE}
             Countly
-            /usr/local/opt/openssl/lib/libssl.a
-            /usr/local/opt/openssl/lib/libcrypto.a
+            /opt/local/lib/libssl.a
+            /opt/local/lib/libcrypto.a
             )
     ELSE()
         FIND_LIBRARY(SSL_STATIC_LIB NAMES libssl.a)

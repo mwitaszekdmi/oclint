@@ -49,7 +49,7 @@ if args.setup:
     process.call('python countly build')
 
 if args.release:
-    process.call('python build -clean -release')
+    process.call('python build -clean -release -no-analytics')
 else:
     process.call('python test -clean')
     process.call('python build -clean')
